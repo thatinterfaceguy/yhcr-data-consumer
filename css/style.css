@@ -1,0 +1,800 @@
+body{
+    background-color: #F1F2F6;
+
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -moz-animation: fadein 2s; /* Firefox */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera */
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* navbar override */
+
+.navbar-default {
+    background-color: #3BAFDA;
+    border-color: #3BAFDA;
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-link, .navbar-default .btn-link {
+    color: white;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-link:hover, .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
+    color: #F5F7FA;
+    background-color: transparent;
+}
+.navbar-default .navbar-text, .navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #F5F7FA;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #4FC1E9;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #1C7597;
+    background-color: #1C7597;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    border-color: #2084A9;
+    background-color: #2084A9;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #3BAFDA;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #4FC1E9;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: white;
+    background-color: #3BAFDA;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        background-color: #4FC1E9;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .divider {
+        background-color: #4FC1E9;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #1C7597;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: white;
+        background-color: #4FC1E9;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .dropdown-header {
+        color: #1C7597;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #2084A9;
+    }
+}
+
+.nav-user-photo {
+    margin: -8px 5px 0 0;
+    border-radius: 100%;
+    border: 2px solid #FFF;
+    max-width: 28px !important;
+}
+
+/* main-content */
+
+.patient-pic{
+    xbackground: url('../img/female.png') center top no-repeat;
+    border: 3px solid #E6E9ED;
+    display: block;
+    height: 125px;
+    margin: 25px auto;
+    width: 125px;
+    border-radius: 50%;
+    -webkit-transition: all 0.2s ease-out;
+}
+
+.patient-pic:hover{
+    border-radius: 0;
+}
+
+.patient-info{
+    color: #999;
+}
+
+.patient-info h4{
+    color: #37BC9B;
+}
+
+.patient-info p{
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.patient-info span{
+    color: #333;
+    font-weight: 600;
+}
+
+.patient-info button{
+    margin: 10px 0;
+}
+
+.patient-info button{
+    margin: 10px 0;
+}
+
+.patient-team{
+    color: #999;
+}
+
+.patient-team p{
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.patient-team span{
+    color: #333;
+    font-weight: 600;
+}
+
+.doc-pic{
+    background: url('../img/doctor2.png') 52% 45% no-repeat;
+    border: 3px solid #ECF0F1;
+    display: block;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+}
+
+.patient-stats{
+    position: relative;
+}
+
+#binder-left{
+    position: absolute;
+    top: -34px;
+    left: 6px;
+}
+
+#binder-right{
+    position: absolute;
+    top: -34px;
+    right: 6px;
+}
+
+.patient-stats p{
+    margin: 0;
+    color: #999;
+}
+
+.patient-stats .value{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.patient-stats .centered .value{
+    font-size: 26px;
+}
+
+.patient-height-image{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+
+}
+
+.patient-height-stats{
+    position: absolute;
+    top: 98px;
+    left: 118px;
+}
+
+/* Sidebar */
+
+.panel-footer.alt{
+    background-color: #fff;
+    padding: 0 15px;
+}
+
+.panel-footer.alt .col-md-6{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.panel-footer.alt button{
+    border: none;
+}
+
+.panel-footer.alt .col-md-6:first-child button{
+    border-right: 1px solid;
+    border-color: #e6e9ed !important;
+    border-radius: 0 0 0 4px;
+}
+
+.panel-footer.alt .col-md-6:last-child button{
+    border-radius: 0 0 4px 0;
+}
+
+.centered{
+    text-align: center;
+}
+
+.bordered{
+    border-right: 1px solid #eee;
+}
+
+/* Patient Stats */
+
+.patient-records .panel-heading h3{
+    position: relative;
+}
+
+.patient-records .panel-heading:hover{
+    cursor: move;
+}
+
+.patient-records .panel-heading span.remove{
+    position: absolute;
+    right: 0;
+}
+
+.patient-records .panel-heading span.remove:hover{
+    cursor: pointer;
+    color: #e6e9ed;
+}
+
+.patient-records .panel-heading span.panel-handle{
+    position: absolute;
+    left: 0;
+}
+
+.patient-records .panel-heading span.panel-handle:hover{
+    cursor: pointer;
+    color: #e6e9ed;
+}
+
+.patient-records .panel-heading span.privacy{
+    position: absolute;
+    right: 25px;
+}
+
+.patient-records .panel-heading span.edit{
+    position: absolute;
+    right: 0;
+}
+
+.patient-records .panel-heading span.title{
+    position: absolute;
+    left: 0;
+}
+
+.patient-records .panel{
+    width: 47%;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.patient-records .panel .panel-body{
+    height: 380px;
+}
+
+.panel-body.height{
+    position: relative;
+}
+
+.panel-body.height img{
+    position: absolute;
+    top: 80px;
+    left: 100px;
+}
+
+.panel-body.height > div{
+    position: absolute;
+    top: 168px;
+    left: 155px;
+}
+
+.panel-body.height > div > p{
+    margin: 0;
+    color: #999;
+}
+
+.panel-body.height > div .value{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.panel-footer{
+    color: #999;
+    background-color: white;
+    text-align: center;
+}
+
+.last-measurement {
+    color: #999;
+}
+
+.last-measurement span{
+    color: #434a54;
+}
+
+.last-measurement div {
+    margin-top: 1px;
+    font-size: 22px;
+}
+
+/* Separator*/
+
+.hor-spacer {
+    margin: 50px;
+    margin-bottom: 30px;
+    position:relative;
+}
+
+.hor-spacer .mask {
+    overflow:hidden;
+    height:20px;
+}
+
+.hor-spacer .mask:after {
+    content:'';
+    display:block;
+    margin:-25px auto 0;
+    width:100%;
+    height:25px;
+    border-radius:125px / 12px;
+    box-shadow:0 0 8px #656D78;
+}
+
+.hor-spacer span {
+    width:50px;
+    height:50px;
+    position:absolute;
+    bottom:100%;
+    margin-bottom:-25px;
+    left:50%;
+    margin-left:-25px;
+    border-radius:100%;
+    box-shadow:0 2px 4px #999;
+    background:white;
+}
+
+.hor-spacer span i {
+    position:absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    border-radius:100%;
+    border:1px dashed #aaa;
+
+    text-align:center;
+    line-height:40px;
+    font-style:normal;
+    color:#999;
+}
+
+.ver-spacer {
+    position:absolute;
+    top: 5px;
+    left: -10px;
+}
+
+.ver-spacer .mask {
+    overflow:hidden;
+    width:20px;
+    height: 175px;
+}
+
+.left .mask:after {
+    content:'';
+    display:block;
+    margin-left:-20px;
+    width:20px;
+    height:100%;
+    border-radius:12px / 125px;
+    box-shadow:0 0 8px #656D78;
+}
+
+.right .mask:before {
+    content:'';
+    display:block;
+    margin-left:20px;
+    width:20px;
+    height:100%;
+    border-radius:12px / 125px;
+    box-shadow:0 0 8px #656D78;
+}
+
+.panel-default .panel-footer .last-measurement div{
+    color: #E6E9ED;
+}
+
+.panel-primary .panel-footer .last-measurement div{
+    color: #3BAFDA;
+}
+
+.panel-success .panel-footer .last-measurement div{
+    color: #8CC152;
+}
+
+.panel-danger .panel-footer .last-measurement div{
+    color: #DA4453;
+}
+
+.panel-warning .panel-footer .last-measurement div{
+    color: #F6BB42;
+}
+
+.panel-info .panel-footer .last-measurement div{
+    color: #37BC9B;
+}
+
+@media (max-width: 991px) {
+    .ver-spacer.left{
+        display: none;
+    }
+   .demographics div[class^='col-']{
+        text-align: center;
+   }
+
+   .demographics div[class^='col-']:last-child{
+        border-top: 1px solid #eee;
+    }
+
+   .demographics .doc-pic{
+       margin: 0 auto;
+   }
+
+   .patient-height-image{
+       position: relative;
+   }
+
+    .patient-height-stats{
+        left: 138px;
+    }
+
+    .patient-records .panel{
+        width: 100%;
+        float: none;
+    }
+}
+
+/* Back to top */
+
+#smoothscroll {
+    height: 44px;
+    width: 44px;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-indent:-9999px;
+    display:none;
+    background: url("../img/back-to-top.png");
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#smoothscroll:hover {
+    -webkit-transform: rotate(360deg);
+    background: url("../img/back-to-top.png") no-repeat;
+}
+
+/* Timeline */
+
+.timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+/* The line */
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #dcdfe3;
+    left: 25%;
+    margin-left: -10px;
+}
+
+/* The date/time */
+.timeline > li{
+    position: relative;
+}
+
+.timeline > li .timeline-date {
+    display: block;
+    width: 30%;
+    padding-right: 100px;
+    position: absolute;
+}
+
+.timeline > li .timeline-date span {
+    display: block;
+    text-align: right;
+}
+
+.timeline > li .timeline-date span:first-child {
+    font-size: 0.8em;
+    color: #BDC3C7;
+}
+
+.timeline > li .timeline-date span:last-child {
+    font-size: 1.2em;
+    color: #2980B9;
+    font-weight: 300;
+}
+
+.timeline > li:nth-child(odd) .timeline-date span:last-child {
+    xcolor: #6cbfee;
+}
+
+/* Right content */
+.timeline > li .timeline-label{
+    position: relative;
+    margin: 0 0 15px 30%;
+    border: none;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.timeline > li .timeline-label .timeline-title {
+    padding: 1em;
+    background: #dcdfe3;
+    color: #797979;
+    line-height: 1.4;
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    -o-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.timeline > li .timeline-label .timeline-title h3 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.timeline > li .timeline-label .timeline-title:hover{
+    cursor: pointer;
+}
+
+.timeline > li .timeline-label .timeline-title:hover, .timeline > li .timeline-label .timeline-title.expanded{
+    background: #3498DB;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+}
+
+.timeline > li .timeline-label .timeline-content{
+    background: #f5f5f5;
+    padding: 1em 0;
+}
+
+/* The triangle */
+.timeline > li .timeline-label .timeline-title:before {
+    left: -20px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 10px;
+    top: 10px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.timeline > li .timeline-label .timeline-title.collapsed:before {
+    border-right-color: #dcdfe3;
+}
+
+.timeline > li .timeline-label .timeline-title.expanded:before, .timeline > li .timeline-label .timeline-title:hover:before {
+    border-right-color: #3498DB;
+}
+
+
+/* The icons */
+.timeline > li .timeline-icon {
+    width: 40px;
+    height: 40px;
+    font-family: FontAwesome;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    position: absolute;
+    color: #fff;
+    background: #3498DB;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #dcdfe3;
+    text-align: center;
+    left: 25%;
+    top: 0;
+    margin: 0 0 0 -25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Example Media Queries */
+@media screen and (max-width: 65.375em) {
+
+    .timeline > li .timeline-date span:last-child {
+        font-size: 1em;
+    }
+
+    .timeline > li .timeline-label .timeline-title h3 {
+        font-size: 1em;
+    }
+
+    .timeline > li .timeline-label .timeline-title {
+        padding: 0.8em;
+    }
+}
+
+@media screen and (max-width: 47.2em) {
+    .timeline:before {
+        display: none;
+    }
+
+    .timeline > li .timeline-date {
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+    }
+
+    .timeline > li .timeline-date span {
+        text-align: left;
+    }
+
+    .timeline > li .timeline-label {
+        margin: 0 0 30px 0;
+        padding: 1em;
+        font-weight: 400;
+        font-size: 95%;
+    }
+
+    .timeline > li .timeline-label {
+        padding: 0;
+    }
+
+    .timeline > li .timeline-label .timeline-title:before {
+        right: auto;
+        left: 15px;
+        top: -20px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    .timeline > li .timeline-icon {
+        position: relative;
+        float: right;
+        left: auto;
+        margin: -55px 5px 0 0;
+    }
+}
+
+/* Form */
+
+.form-element ul, .form-element li{
+    list-style: none;
+}
+
+.form-element{
+    xwidth: 97%;
+}
+
+.form-header{
+    position: relative;
+    padding: 5px 0;
+    border-bottom: 1px solid #c9cdd7;
+    font-size: 1em;
+    color: #3498DB;
+}
+
+
+.form-header:hover{
+    cursor: pointer;
+}
+
+/*.form-header > span{
+    text-overflow: ellipsis;
+    overflow : hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: absolute;
+    left: 20px;
+    line-height: 20px;
+}*/
+
+.form-header > i{
+    margin: 0 5px 0 0;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+}
+
+
+.form-content{
+    color: #333;
+    padding: 8px 0;
+}
+
+.form-content span {
+    color: #999;
+}
+
+.form-header > i.fa-angle-right{
+    color: #c9cdd7;
+}
+
+.form-content label:last-child{
+    margin-bottom: 0  !important;
+}
+
+span.normal{
+    color: #8CC152;
+}
+
+span.abnormal{
+    color: #DA4453;
+}
+
+span.abnormal i{
+    margin-left: 5px;
+}
+
+
