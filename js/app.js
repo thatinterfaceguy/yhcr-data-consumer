@@ -312,7 +312,7 @@ $(document).ready(function () {
     //Exercise 1 - Fetch all clinically active AllergyIntolerance resources for Patient/1181
     function getAllergies() {
         return $.ajax({
-            url: baseUrl + "<!-- TODO: TYPE SEARCH HERE-->",
+            url: baseUrl + "<!-- TODO: TYPE SEARCH QUERY STRING HERE-->",
             type: 'GET',
             success: function (res) {
                 //Crude de-dupe based on snomed (NOTE: THIS WOULD NEVER DO FOR SOFTWARE INTENDED FOR REAL LIFE USE)...

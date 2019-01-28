@@ -373,14 +373,14 @@
             }
         },
 
+        //Exercise 2 - Fetch a total of 50 resources comprising: Encounter, Observation, MedicationStatement and Condition for patient id 1181
         getDocs: function(){
 
             var self = this;
-            //Example of _revInclude to build a timeline of Obs, Meds, Encounters and Conditions in one API call
 
             return $.ajax({
                 type: "GET",
-                url: this.options.baseUrl + "Patient?_id=1181&_revinclude=Encounter:patient&_revinclude=Observation:patient&_revinclude=MedicationStatement:patient&_revinclude=Condition:patient&_count=50",
+                url: this.options.baseUrl + "<!-- TODO: TYPE SEARCH QUERY STRING HERE-->",
                 contentType: 'application/json+fhir',
                 success: function (bundle) {
                     self.renderDocs(bundle);
