@@ -309,11 +309,10 @@ $(document).ready(function () {
         });
     }
 
-    //Execute an AllergyIntolerance search against the CCRI and return a bundle containing:
-    //All clincally active AllergyIntolerances for patient/1181
+    //Exercise 1 - Fetch all clinically active AllergyIntolerance resources for Patient/1181
     function getAllergies() {
         return $.ajax({
-            url: baseUrl + "AllergyIntolerance?clinical-status=active&patient=Patient/1181",
+            url: baseUrl + "<!-- TODO: TYPE SEARCH HERE-->",
             type: 'GET',
             success: function (res) {
                 //Crude de-dupe based on snomed (NOTE: THIS WOULD NEVER DO FOR SOFTWARE INTENDED FOR REAL LIFE USE)...
