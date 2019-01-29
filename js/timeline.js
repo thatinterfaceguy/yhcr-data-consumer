@@ -380,7 +380,7 @@
 
             return $.ajax({
                 type: "GET",
-                url: this.options.baseUrl + "<!-- TODO: TYPE SEARCH QUERY STRING HERE-->",
+                url: this.options.baseUrl + "Patient?_id=1181&_revinclude=Encounter:patient&_revinclude=Observation:patient&_revinclude=MedicationStatement:patient&_revinclude=Condition:patient&_count=50",
                 contentType: 'application/json+fhir',
                 success: function (bundle) {
                     self.renderDocs(bundle);
