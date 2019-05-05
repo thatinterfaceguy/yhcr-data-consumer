@@ -7,7 +7,7 @@
 
     var pluginName = "ccriTimeline",
         defaults = {
-            baseUrl: "https://data.developer.nhs.uk/ccri-fhir/STU3/"
+            baseUrl: "http://localhost:57772/local/fhir/STU3/"
         };
 
     function Plugin( element, options ) {
@@ -381,7 +381,7 @@
             return $.ajax({
                 type: "GET",
                 url: this.options.baseUrl + "Patient?_id=1181&_revinclude=Encounter:patient&_revinclude=Observation:patient&_revinclude=MedicationStatement:patient&_revinclude=Condition:patient&_count=50",
-                contentType: 'application/json+fhir',
+                headers: {"accept":"application/fhir+json"},
                 success: function (bundle) {
                     self.renderDocs(bundle);
                 }

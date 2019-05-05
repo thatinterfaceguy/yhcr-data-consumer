@@ -32,7 +32,7 @@ $(document).ready(function () {
     $('#timeline-example').ccriTimeline();
 
     // CCRI
-    var baseUrl = "https://data.developer.nhs.uk/ccri-fhir/STU3/";
+    var baseUrl = "http://localhost:57772/local/fhir/STU3/";
 
     var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -41,8 +41,9 @@ $(document).ready(function () {
         //Patient resource, General Practitioner and General Practice
         //HINT: _include
         return $.ajax({
-            url: baseUrl + "Patient?_id=1181&_include=Patient:general-practitioner&_include=Patient:organization",
+            url: baseUrl + "Patient?_id=1181&_include=Patient:generalPractitioner&_include=Patient:organization",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (data) {
                 var bundle = data;
 
@@ -91,9 +92,9 @@ $(document).ready(function () {
                 var gpPrac = bundle.entry[1].resource;
                 $("#patient-gpprac").html(gpPrac.name);
 
-                //General Practitioner
+                /*//General Practitioner
                 var gp = bundle.entry[2].resource;
-                $("#patient-gp").html(gp.name[0].prefix[0] + "." + gp.name[0].given[0] + " " + gp.name[0].family + " (" + gp.identifier[0].value + ")");
+                $("#patient-gp").html(gp.name[0].prefix[0] + "." + gp.name[0].given[0] + " " + gp.name[0].family + " (" + gp.identifier[0].value + ")");*/
             }
         });
     }
@@ -105,7 +106,9 @@ $(document).ready(function () {
         return $.ajax({
             url: baseUrl + "Observation?patient=Patient/1181&category=vital-signs&_count=50",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (data) {
+                console.log("Vitals: " + JSON.stringify(data))
                 var bundle = data;
 
                 //Expectation here is that we receive a Bundle of vital sign observation resources
@@ -178,6 +181,7 @@ $(document).ready(function () {
         return $.ajax({
             url: baseUrl + "Observation?patient=Patient/1181&code=75367002",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (res) {
                 
                 var entries = res.entry;
@@ -205,14 +209,19 @@ $(document).ready(function () {
                             diastolic = comp.valueQuantity.value;
                         }
 
-                        bloodPressures.push(
-                            {
-                                "date":date,
-                                "systolic":systolic,
-                                "diastolic":diastolic,
-                                "unit":unit
-                            }
-                        );
+                        if(systolic && diastolic)
+                        {
+                            bloodPressures.push(
+                                {
+                                    "date":date,
+                                    "systolic":systolic,
+                                    "diastolic":diastolic,
+                                    "unit":unit
+                                }
+                            );
+                        }
+
+                        
                     }
                     
                 }
@@ -254,6 +263,7 @@ $(document).ready(function () {
         return $.ajax({
             url: baseUrl + "Observation?patient=Patient/1181&code=364075005",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (res) {
 
                 var entries = res.entry;
@@ -314,6 +324,7 @@ $(document).ready(function () {
         return $.ajax({
             url: baseUrl + "AllergyIntolerance?clinical-status=active&patient=Patient/1181",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (res) {
                 //Crude de-dupe based on snomed (NOTE: THIS WOULD NEVER DO FOR SOFTWARE INTENDED FOR REAL LIFE USE)...
                 var currSnomed = ""
@@ -338,6 +349,7 @@ $(document).ready(function () {
         return $.ajax({
             url: baseUrl + "MedicationStatement?status=active&patient=Patient/1181",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (res) {
                 //Crude de-dupe
                 var currMedRef = "";
@@ -362,6 +374,7 @@ $(document).ready(function () {
         return $.ajax({
             url: baseUrl + "Condition?clinical-status=active&patient=Patient/1181",
             type: 'GET',
+            headers: {"accept":"application/fhir+json"},
             success: function (res) {
                  //Crude de-dupe
                  var currConditionRef = "";
@@ -385,6 +398,7 @@ $(document).ready(function () {
     function getLabs() {
         return $.ajax({
             url: baseUrl + "Observation?patient=Patient/1181&category=laboratory",
+            headers: {"accept":"application/fhir+json"},
             type: 'GET',
             success: function (data) {
 
